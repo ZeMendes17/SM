@@ -1,0 +1,23 @@
+function [simbolos,frequencia] = Alfabeto2(texto)
+%ALFABETO2 Summary of this function goes here
+%   quantas vezes aparece cada um
+
+N = length(texto);
+n = 1;
+simbolos(n) = texto(1);
+
+for i = 2 : N
+    if sum(simbolos == texto(i)) == 0
+        n = n + 1;
+        simbolos(n) = texto(i);
+    end
+end
+
+frequencia = zeros(length(simbolos));
+for i = 1:N
+    
+end
+
+
+end
+

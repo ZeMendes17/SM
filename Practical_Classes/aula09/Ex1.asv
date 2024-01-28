@@ -1,0 +1,3 @@
+load("Mensagem.mat");
+
+simbolos = Alfabeto1(Mensagem);

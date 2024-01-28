@@ -1,0 +1,21 @@
+Ta = 0.001;
+f0 = 1;
+Np = 2; % numero de periodos
+K = 10;
+indices = 1:2:K-1;
+bk = zeros(1, K-1);
+bk(indices) = 4./(pi*indices);
+bk = [0 bk];
+
+ak = zeros(size(bk));
+[x,t] = serieFourier(Ta, f0, Np, ak, bk);
+figure(1);
+t1 = 0:Ta:2-2*Ta;
+y = square(2*pi*1*t1);
+plot(t1, y, 'r');
+hold on
+plot(t, x, 'b');
+grid;
+legend('Square Wave', 'Serie Fourier K=30')
+xlabel("Tempo (s)");
+ylabel("x(t)");

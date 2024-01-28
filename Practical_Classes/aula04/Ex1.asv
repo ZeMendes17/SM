@@ -1,0 +1,13 @@
+Ta = 0.001;
+f0 = 1;
+Np = 2; % numero de periodos
+K = 10;
+indices = 1:2:K-1;
+bk = zeros(1, K-1);
+bk = 4./(pi*indices);
+bk = [0 bk];
+
+ak = zeros(size(bk));
+[x,t] = serieFourier(Ta, f0, Np, ak, bk);
+figure(1);
+

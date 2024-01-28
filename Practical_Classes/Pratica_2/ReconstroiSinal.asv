@@ -1,0 +1,15 @@
+function [y,t] = ReconstroiSinal(x,Ta)
+% x -> vetor de amostras do sinal
+% Ta -> periodo de amostragem
+
+N = length(x);
+y = zeros(100*N, 1); %sinal reconstruido
+
+fa = 1/Ta;
+fy = 100 * fa; % frequen
+Ty = 1/fy;
+
+t = [0:(length(y)- 1)]'*Ty; % vetor de instantes do tempo na nova discretização
+
+end
+
